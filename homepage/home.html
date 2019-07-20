@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>TSA Home</title>
+	</head>
+	<body>
+		<button id="show-form">Make an Organization</button>
+		<form id="organization-form">
+			<input type = "name" name= "name" placeholder="Name" required>
+			<input type="abbreviation" name="abbreviation" placeholder="Abbreviation" required>
+			<input type="description" name="description" placeholder="Description" required>
+			<button id="make-organization" type="submit" name="button">Make</button>
+			<div class="error"></div>
+		</form>
+
+		<div id="user-information">
+			<div id="first_name"></div>
+			<div id="last_name"></div>
+			<div id="email"></div>
+			<div id="role"></div>
+			<div id="state"></div>
+			<div id="approved"></div>
+		</div>
+
+		<div id="approval-section">
+
+		</div>
+
+		<button id="logout" type="button" name="button">Logout</button>
+
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+		<script type="text/javascript">
+			const firebaseConfig = {
+				apiKey: "AIzaSyDYaED4P7ESuXvykv5LfdiikPHQpNfTz60",
+				authDomain: "mynctsa.firebaseapp.com",
+				databaseURL: "https://mynctsa.firebaseio.com",
+				projectId: "mynctsa",
+				storageBucket: "mynctsa.appspot.com",
+				messagingSenderId: "266555650190",
+				appId: "1:266555650190:web:15206f59f925be6a"
+			};
+			firebase.initializeApp(firebaseConfig);
+
+		    const auth = firebase.auth();
+		    const db = firebase.firestore();
+		    const functions = firebase.functions();
+
+		    db.settings({ timestampsInSnapshots: true });
+		</script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="home.js" charset="utf-8"></script>
+	</body>
+</html>
