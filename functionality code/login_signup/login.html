@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>TSA Login</title>
+	</head>
+	<body>
+		<form id="loginForm">
+			<input type="email" name="email" placeholder="Email" required>
+			<input type="password" name="password" placeholder="Password" required>
+			<button type="submit" name="button">Log in</button>
+			<div class="error"></div>
+		</form>
+		<a href= "signup.html">Go To Sign up</a>
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+		<script type="text/javascript">
+			const firebaseConfig = {
+				apiKey: "AIzaSyDYaED4P7ESuXvykv5LfdiikPHQpNfTz60",
+				authDomain: "mynctsa.firebaseapp.com",
+				databaseURL: "https://mynctsa.firebaseio.com",
+				projectId: "mynctsa",
+				storageBucket: "mynctsa.appspot.com",
+				messagingSenderId: "266555650190",
+				appId: "1:266555650190:web:15206f59f925be6a"
+			};
+			firebase.initializeApp(firebaseConfig);
+
+		    const auth = firebase.auth();
+		    const db = firebase.firestore();
+		    const functions = firebase.functions();
+			
+		    db.settings({ timestampsInSnapshots: true });
+		</script>
+		<script src="login.js" charset="utf-8"></script>
+	</body>
+</html>
